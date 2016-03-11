@@ -1,33 +1,19 @@
 import React, { Component } from 'react';
 
+import StringButton from './StringButton';
+import InitPageHeader from './init-page-header';
 
-const todos =[
-{
-  task: 'Build An app',
-  isCompleted: false
-},
-{
-  task: 'get rich',
-  isCompleted: true
-}
-];
+
 
 
 
 export default class App extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      todos
-    };
-  }
-
-  render() {
+  render(){
     return (
-      <div>
-        <h1> Hello world</h1>
+      <div className="text-center">
+        <InitPageHeader />
+        <StringButton text1="Props Text1" color='red' />
       </div>
-    );
+    )
   }
 }
