@@ -4,7 +4,7 @@ export default class InitPageHeader extends Component {
   render(){
     return (
       <div>
-        Header
+        <h1>Make Me Super !</h1>
       </div>
     )
   }
