@@ -10,3 +10,6 @@ body {
 .init-page-header {
   color: #ED1C24;
 }
+.dropdown {
+  padding-bottom: 25px;
+}
