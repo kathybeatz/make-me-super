@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+//<img src={this.state.imageUrl} className="img-rounded" alt="Your Alter Ego!" width="304" height="236" />
+
 export default class MakeMeSuperButton extends Component {
 
   constructor() {
@@ -10,11 +12,17 @@ export default class MakeMeSuperButton extends Component {
     };
   }
 
+
   render(){
     return (
-    <div>
-      <img src={this.state.imageUrl} className="img-rounded" alt="Your Alter Ego!" width="304" height="236" />
-    </div>
+      <div>
+      <img src={this.state.imageUrl} alt="Your Alter Ego!" width="360" height="300" />
+
+      </div>
     )
+  }
+
+  clickhandler() {
+    this.setState({ imageUrl: ''})
   }
 }
