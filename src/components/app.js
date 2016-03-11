@@ -1,33 +1,20 @@
 import React, { Component } from 'react';
 
-
-const todos =[
-{
-  task: 'Build An app',
-  isCompleted: false
-},
-{
-  task: 'get rich',
-  isCompleted: true
-}
-];
+import StringButton from './StringButton';
+import InitPageHeader from './init-page-header';
+import MakeMeSuperButton from './init-page-button';
+import DropdownMenu from './dropdown-menu';
 
 
 
 export default class App extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      todos
-    };
-  }
-
-  render() {
+  render(){
     return (
-      <div>
-        <h1> Hello world</h1>
+      <div className="text-center init-page">
+        <InitPageHeader />
+        <DropdownMenu />
+        <MakeMeSuperButton />
       </div>
-    );
+    )
   }
 }
