@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
+<<<<<<< HEAD
 import axios from 'axios';
+=======
+import { Link } from 'react-router';
+>>>>>>> 26a783f28a001402cd509a4fdcf217d64c4ecb5f
 
 export default class Search extends Component {
 
@@ -33,7 +37,11 @@ export default class Search extends Component {
   render(){
     return (
       <div>
-        <button className="btn btn-primary btn-lg button" type="button">Make Me Batman!</button>
+        <button className="btn btn-primary btn-lg button" type="button">
+        <Link to="/profile">
+        Make Me Batman!
+        </Link>
+        </button>
       </div>
 
     )
