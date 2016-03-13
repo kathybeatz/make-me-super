@@ -5,7 +5,7 @@ var webpack = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
 var config = require('../webpack.config.js');
 var mongoose = require('mongoose');
-var db = require('./config/db.js');
+var db = require('../config/db.js');
 
 var app = express();
 
