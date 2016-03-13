@@ -5,6 +5,7 @@ var webpack = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
 var config = require('../webpack.config.js');
 var mongoose = require('mongoose');
+var allActivities = require('../src/db_models/allActivitiesMDBModel.js');
 
 var app = express();
 
@@ -51,33 +52,37 @@ app.use(function(req, res, next) {
   next();
 });
 
-// get saved activities
-app.get('/profile/api/savedActivities', function(req, res) { // Q: do we need to setHeaders to res?
+// test get request
+app.get('/api/search', function(req, res) {
 
-  console.log('inside /profile/api/savedActivities!!');
+  console.log('--------------------inside server get request!');
+
+  res.send('end get request');
+
+  // allActivities.find({}).then(function (activities) {
+  //   if (activities) {
+  //     res.status(200).send(activities);
+  //   }
+  //   else {
+  //     res.status(404).send('Not Found');
+  //   }
+  // });
 });
 
-// get all activities
-app.get('/search/api/activities', function(req, res) {
+// test post request
+app.post('/api/test', function(req, res) {
 
-  // mongoose.find({});
-  console.log('inside /search/api/activities!!');
+  console.log('------------------inside server post request!');
+
+  res.send('end post request');
+  
+  // var test = new allActivities({
+  //
+  // });
 });
-
-// post saved actvities
-app.post('/search/api/postActivity', function(req, res) {
-
-  console.log('/search/api/postActivity!!');
-});
-
 
 app.listen(port, function () {
  console.log('Proxy listening on port 3000!');
 });
-
-
-
-
-
 
 /////////////////////////////
