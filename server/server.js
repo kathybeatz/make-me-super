@@ -5,6 +5,7 @@ var webpack = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
 var config = require('../webpack.config.js');
 var mongoose = require('mongoose');
+var db = require('./config/db.js');
 
 var app = express();
 
@@ -12,12 +13,11 @@ var app = express();
 var databaseCollection = require('../data/db/MongooseSchema.model.js');
 
 //Database Names have an 's' added
-var db = 'mongodb://localhost/databaseName';
 
 //Uncomment line 20 if you wish to connect to a local database
 //If so, ensure you have mongod running in terminal
 
-//mongoose.connect(db);
+mongoose.connect(db.url);
 
 var port = process.env.PORT || 3000;
 
