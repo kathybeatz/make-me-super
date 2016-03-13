@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-<<<<<<< HEAD
+
 import axios from 'axios';
-=======
+
 import { Link } from 'react-router';
->>>>>>> 26a783f28a001402cd509a4fdcf217d64c4ecb5f
+
 
 export default class Search extends Component {
 

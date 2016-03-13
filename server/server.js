@@ -54,6 +54,18 @@ app.use(function(req, res, next) {
   next();
 });
 
+// test get request
+app.get('/api/search', function(req, res) {
+  console.log('------------inside server, get request!');
+  res.send('finished get request');
+});
+
+// test post request
+app.post('/api/test', function(req, res) {
+  console.log('------------inside server, post request!');
+  res.send('finished post request');
+});
+
 app.listen(port, function () {
  console.log('Proxy listening on port 3000!');
 });
