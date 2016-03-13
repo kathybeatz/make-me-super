@@ -51,24 +51,18 @@ app.use(function(req, res, next) {
   next();
 });
 
-// get saved activities
-app.get('/profile/api/savedActivities', function(req, res) { // Q: do we need to setHeaders to res?
+app.get('/api/test', function(request, response, err) {
+  //mongoose find all here
+  console.log("We're in the server!!!");
 
-  console.log('inside /profile/api/savedActivities!!');
+  response.end("ennnndddd");
+
+  if(err){
+    console.log("ERROR!", err);
+  }
 });
 
-// get all activities
-app.get('/search/api/activities', function(req, res) {
 
-  // mongoose.find({});
-  console.log('inside /search/api/activities!!');
-});
-
-// post saved actvities
-app.post('/search/api/postActivity', function(req, res) {
-
-  console.log('/search/api/postActivity!!');
-});
 
 
 app.listen(port, function () {
