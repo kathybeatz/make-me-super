@@ -35,5 +35,8 @@
   text-align: center;
 }
 .activityText {
+  color: blue;
+}
+.paragraphText {
   color: white;
 }

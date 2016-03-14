@@ -71,5 +71,3 @@ app.post('/api/postActivity', function(req, res) {
 app.listen(port, function () {
  console.log('Proxy listening on port 3000!');
 });
-
-/////////////////////////////
