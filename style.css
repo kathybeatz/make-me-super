@@ -1,10 +1,16 @@
 /* for lee's components */
+body {
+  background-color: black;
+}
+.link:hover {
+  color: white;
+}
 .init-page {
   background-image: url("./src/images/Heroes.jpg");
   width: 100%;
   height: 100%;
   background-attachment: fixed;
-  background-position: center center;
+  background-position: center;
   background-size: cover;
   font-family: 'Permanent Marker', cursive;
 }
@@ -15,6 +21,29 @@
   color: #FFFFFF;
   padding-bottom: 25px;
 }
+.nav {
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+}
+.nav li {
+  width: 300px;
+  background-color: black;
+  border: 1px solid purple;
+  text-align: center;
+  float: left;
+  margin: 10px 25px 0px 75px;
+}
+.nav li a:hover {
+  background-color: red;
+}
+.nav li ul li {
+  text-align: center;
+}
+.super-button {
+  margin-top: 15px;
+}
+
 /* for jenna's search.js */
 .searchContainer {
   background-image: url("./src/images/search_batman.jpg");
