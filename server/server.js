@@ -5,17 +5,12 @@ var webpack = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
 var config = require('../webpack.config.js');
 var mongoose = require('mongoose');
+var SavedActivity = require('../data/db/userSavedActivityMDBModel.js');
+// var allActivities = require('../src/db_models/allActivitiesMDBModel.js'); // jenna 3/13/16 don't need this yet
+
 var db = require('../config/db.js');
 
 var app = express();
-
-
-var databaseCollection = require('../data/db/MongooseSchema.model.js');
-
-//Database Names have an 's' added
-
-//Uncomment line 20 if you wish to connect to a local database
-//If so, ensure you have mongod running in terminal
 
 mongoose.connect(db.url);
 
@@ -39,39 +34,42 @@ new WebpackDevServer(webpack(config), {
   console.log('Listening at localhost:3001');
 });
 
-// ===================================================================
-// ROUTES
-// ===================================================================
-
 // additional middleware to set headers that we need on ea request
 app.use(function(req, res, next) {
-
   // disable caching so we'll always get the latest activities
   res.setHeader('Cache-Control', 'no-cache');
   next();
 });
 
-app.get('/api/test', function(request, response, err) {
-  //mongoose find all here
-  console.log("We're in the server!!!");
-
-  response.end("ennnndddd");
-
-  if(err){
-    console.log("ERROR!", err);
-  }
+app.get('/api/getActivity', function(req, res) {
+  console.log('------------inside server, get request!');
+  res.send('finished get request');
 });
 
+app.post('/api/postActivity', function(req, res) {
 
+  console.log('inside server, post request! request.body: ', req.body);
 
+  var savedActivity = new SavedActivity({
+    Title: req.body.Title,
+    Locale: req.body.Locale
+  });
+
+  savedActivity.save(function(err) {
+    if (err) {
+      console.log('savedActivity post save error! ', err);
+      throw err;
+    }
+    else {
+      console.log('Activity saved!');
+    }
+  });
+
+  res.send('finished post request');
+});
 
 app.listen(port, function () {
  console.log('Proxy listening on port 3000!');
 });
-
-
-
-
-
 
 /////////////////////////////

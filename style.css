@@ -1,3 +1,4 @@
+/* for lee's components */
 .init-page {
   background-image: url("./src/images/Heroes.jpg");
   width: 100%;
@@ -11,5 +12,28 @@
   color: #ED1C24;
 }
 .dropdown {
+  color: #FFFFFF;
   padding-bottom: 25px;
+}
+/* for jenna's search.js */
+.searchContainer {
+  background-image: url("./src/images/search_batman.jpg");
+  width: 100%;
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+.paddingTop {
+  padding-top: 100px;
+}
+.button {
+  float: right;
+}
+.header {
+  color: orange;
+  text-align: center;
+}
+.activityText {
+  color: white;
 }
