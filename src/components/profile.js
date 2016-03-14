@@ -27,7 +27,7 @@ componentWillMount (){
       <div>
       <h1>My Profile</h1>
 
-      <table> 
+      <table>
 
       <th>Saved Activities</th>
       <tr>
@@ -39,7 +39,7 @@ componentWillMount (){
 
       <tr>/*Activities should populate here*/</tr>
 
-      
+
       </table>
       </div>
 
@@ -47,5 +47,3 @@ componentWillMount (){
   };
 
 }
-
-
