@@ -37,6 +37,7 @@ export default class Search extends Component {
 
           <div className="col-md-4">
             <p className="lead activityText">Wingsuit Over Dubai</p>
+            <iframe width="300" height="300" src="https://www.youtube.com/embed/EZEgz50VMsk" frameborder="0" allowfullscreen></iframe>
             <label className="paragraphText">
               Always wanted to learn how to fly? This is your chance, Take to the air, then soar through the sky, thinking to yourself you are Batman.
               <br />
@@ -46,6 +47,7 @@ export default class Search extends Component {
 
           <div className="col-md-4">
             <p className="lead activityText">Skydive Namibia</p>
+            <iframe width="300" height="300" src="https://www.youtube.com/embed/oipcXrHZZV4" frameborder="0" allowfullscreen></iframe>
             <label className="paragraphText">
               Two thousand feet in the air overlooking one of the most iconic landscapes in all of air or wind sports.
               <br />
@@ -55,6 +57,7 @@ export default class Search extends Component {
 
           <div className="col-md-4">
             <p className="lead activityText">Hot Air Balloon in Cappadocia</p>
+            <iframe width="300" height="300" src="https://www.youtube.com/embed/bNtwfVP0OHs" frameborder="0" allowfullscreen></iframe>
             <label className="paragraphText">
               Fall a thousand feet as you take in the incredible juxtaposition of bright blue Atlantic Ocean and the sprawling brown Namib desert.
               <br />
@@ -64,6 +67,7 @@ export default class Search extends Component {
 
           <div className="col-md-4 paddingTop">
             <p className="lead activityText">Parasailing Catalina Island</p>
+            <iframe width="300" height="300" src="https://www.youtube.com/embed/7WChchYbVEo" frameborder="0" allowfullscreen></iframe>
             <label className="paragraphText">
               Part sea, part air, but completely awesome, ascend six hundred feet harnessed to a speed-boat hoisted parachute Take in spectacular vistas of clear Pacific Coast waters, rugged Catalina Island Terrain, and the whimsically arranged city of Avalon An ultimate adventure on Catalina, and, may be free of charge on your birthday.
               <br />
@@ -73,6 +77,7 @@ export default class Search extends Component {
 
           <div className="col-md-4 paddingTop">
             <p className="lead activityText">Carnaval in Bahia</p>
+            <iframe width="300" height="300" src="https://www.youtube.com/embed/jdQFPhuvG_c" frameborder="0" allowfullscreen></iframe>
             <label className="paragraphText">
               Go on an authentic Carnaval experience without all the tourists Enjoy Carnaval in Bahia!
               <br />
@@ -81,7 +86,8 @@ export default class Search extends Component {
           </div>
 
           <div className="col-md-4 paddingTop">
-            <p className="lead activityText">Clubbing in Berghain</p>
+            <p className="lead activityText">Underground Clubbing in Berghain</p>
+            <iframe width="300" height="300" src="https://www.youtube.com/embed/0buhM4bbAx4" frameborder="0" allowfullscreen></iframe>
             <label className="paragraphText">
               Go clubbing at most exclusive nightclub in Berlin Do not forget to wear all black to increase your chances of getting in and take a nap before heading out!
               <br />
