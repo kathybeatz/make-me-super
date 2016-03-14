@@ -41,21 +41,10 @@ app.use(function(req, res, next) {
   next();
 });
 
-
 app.get('/api/getActivity', function(req, res) {
   console.log('------------inside server, get request!');
-
-  SavedActivity.find({}, function(err, activities) {
-    if (!err){ 
-      console.log("Activities!!!!!!", activities);
-      res.status(200).send(activities);
-    } else {throw err;}
-
-  });
-
+  res.send('finished get request');
 });
-
-
 
 app.post('/api/postActivity', function(req, res) {
 
