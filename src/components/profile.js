@@ -1,50 +1,43 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-​
+
 const Activities = [];
-​
+
 export default class Profile extends Component {
-​
-​
+
+
 componentWillMount() {
-​
+
   axios.get('/api/getActivity')
   .then(function(resp){
-​
+
     Activities.push(resp.data);
-​
+
     console.log('axios response: ', resp.data);
     console.log("****Activities", Activities);
   })
   .catch(function(resp) {
     console.log('axios catch response ', resp);
   });
-​
-​
-​
-​
+
+
+
+
 }
-​
-​
-​
+
+
+
   render() {
  
     
     return (
-​
       <div className="profileContainer">
-​
-      <div>
-      <h1>My Profile</h1>
-​
-      <table>
-​
-​
+
        <h1 className="profileHead">My Profile</h1>
        <h2 className="Welcome">Welcome, Batman!</h2>
        <br/>
        <h3 className="Customize">Customize</h3>
-​
+
        <div className="tableContainer">
        <table class="flat-table" align="center">
   <tbody>
@@ -72,18 +65,15 @@ componentWillMount() {
       <td>2,000 feet in the air overlooking one of the most iconic landscapes in all of air or wind sports</td>
       <td>www.hotairballooncappadocia.com/Ballooning-Safety.html</td>
     </tr>
-​
-​
+
   </tbody>
   </table>
        </div>
-​
-​
-      </table>
-​
       </div>
-​
+
     );
   };
-​
+
 }
+
+
