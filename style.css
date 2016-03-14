@@ -1,4 +1,5 @@
 /* for lee's components */
+​
 body {
   background-color: black;
 }
@@ -43,7 +44,7 @@ body {
 .super-button {
   margin-top: 15px;
 }
-
+​
 /* for jenna's search.js */
 .searchContainer {
   background-image: url("./src/images/search_batman.jpg");
@@ -68,4 +69,43 @@ body {
 }
 .paragraphText {
   color: white;
+}
+​
+/*JB's css*/
+.profileContainer{
+  background-image: url("./src/images/dark_knight.jpg");
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+​
+.Welcome{
+  display: inline-block;
+  float: right;
+  color: white;
+}
+​
+.Customize{
+  display: inline-block;
+  float: right;
+  color: white;
+}
+.profileHead{
+  display: inline-block;
+  color: white;
+}
+​
+.savedActivities, td, th {
+  margin: center;
+  color: white;
+  background-color: transparent;
+  border: 2px transparent;
+  padding: 5px;
+}
+​
+​
+.tableContainer{
+  height: 800px;
+  width: 800px;
 }
