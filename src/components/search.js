@@ -30,50 +30,62 @@ export default class Search extends Component {
       <div className="container searchContainer">
 
         <header>
-            <h1 id="headerText" className="header">Batman...</h1>
+            <h1 id="headerText" className="header">Be Batman...</h1>
         </header>
 
         <div className="row paddingTop" id="activitiesList">
 
           <div className="col-md-4">
             <p className="lead activityText">Wingsuit Over Dubai</p>
-            <label className="activityText">
+            <label className="paragraphText">
+              Always wanted to learn how to fly? This is your chance, Take to the air, then soar through the sky, thinking to yourself you are Batman.
+              <br />
               <input type="radio" value="wingsuit" />
             </label>
           </div>
 
           <div className="col-md-4">
             <p className="lead activityText">Skydive Namibia</p>
-            <label className="activityText">
+            <label className="paragraphText">
+              Two thousand feet in the air overlooking one of the most iconic landscapes in all of air or wind sports.
+              <br />
               <input type="radio" value="namibia" />
             </label>
           </div>
 
           <div className="col-md-4">
-            <p className="lead activityText">Hot Air Balloon - Cappadocia</p>
-            <label className="activityText">
+            <p className="lead activityText">Hot Air Balloon in Cappadocia</p>
+            <label className="paragraphText">
+              Fall a thousand feet as you take in the incredible juxtaposition of bright blue Atlantic Ocean and the sprawling brown Namib desert.
+              <br />
               <input type="radio" value="cappadocia" />
             </label>
           </div>
 
           <div className="col-md-4 paddingTop">
-            <p className="lead activityText">Wingsuit Over Dubai</p>
-            <label className="activityText">
-              <input type="radio" value="wingsuit" />
+            <p className="lead activityText">Parasailing Catalina Island</p>
+            <label className="paragraphText">
+              Part sea, part air, but completely awesome, ascend six hundred feet harnessed to a speed-boat hoisted parachute Take in spectacular vistas of clear Pacific Coast waters, rugged Catalina Island Terrain, and the whimsically arranged city of Avalon An ultimate adventure on Catalina, and, may be free of charge on your birthday.
+              <br />
+              <input type="radio" value="parasailing" />
             </label>
           </div>
 
           <div className="col-md-4 paddingTop">
-            <p className="lead activityText">Skydive Namibia</p>
-            <label className="activityText">
-              <input type="radio" value="namibia" />
+            <p className="lead activityText">Carnaval in Bahia</p>
+            <label className="paragraphText">
+              Go on an authentic Carnaval experience without all the tourists Enjoy Carnaval in Bahia!
+              <br />
+              <input type="radio" value="bahia" />
             </label>
           </div>
 
           <div className="col-md-4 paddingTop">
-            <p className="lead activityText">Hot Air Balloon - Cappadocia</p>
-            <label className="activityText">
-              <input type="radio" value="cappadocia" />
+            <p className="lead activityText">Clubbing in Berghain</p>
+            <label className="paragraphText">
+              Go clubbing at most exclusive nightclub in Berlin Do not forget to wear all black to increase your chances of getting in and take a nap before heading out!
+              <br />
+              <input type="radio" value="berlin" />
             </label>
           </div>
 
