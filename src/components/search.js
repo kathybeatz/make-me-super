@@ -8,11 +8,10 @@ export default class Search extends Component {
 
     axios.post('/api/postActivity', { Title: 'wingsuit over Dubai', Locale: 'Dubai' })
       .then(function(response) {
-        console.log('post response.data: ', response.data);
-        console.log('post response.status:' , response.status);
+        console.log('handlePost() response.data: ', response.data, ' response.status: ', response.status);
       })
       .catch(function(response) {
-        console.log('post catch error: ', response.data);
+        console.log('handlePost() error: ', response.data);
       });
   }
 

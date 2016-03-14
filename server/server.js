@@ -6,14 +6,11 @@ var WebpackDevServer = require('webpack-dev-server');
 var config = require('../webpack.config.js');
 var mongoose = require('mongoose');
 var SavedActivity = require('../data/db/userSavedActivityMDBModel.js');
-
-// var allActivities = require('../src/db_models/allActivitiesMDBModel.js');
+// var allActivities = require('../src/db_models/allActivitiesMDBModel.js'); // jenna 3/13/16 don't need this yet
 
 var db = require('../config/db.js');
 
 var app = express();
-
-//var databaseCollection = require('../data/db/MongooseSchema.model.js');
 
 mongoose.connect(db.url);
 
@@ -44,7 +41,7 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.get('/api/search', function(req, res) {
+app.get('/api/getActivity', function(req, res) {
   console.log('------------inside server, get request!');
   res.send('finished get request');
 });
@@ -60,7 +57,7 @@ app.post('/api/postActivity', function(req, res) {
 
   savedActivity.save(function(err) {
     if (err) {
-      console.log('----inside post save error! ', err);
+      console.log('savedActivity post save error! ', err);
       throw err;
     }
     else {
