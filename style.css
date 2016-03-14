@@ -2,20 +2,26 @@
 body {
   background-color: black;
 }
+.link{
+  color: #F2671F;
+}
 .link:hover {
   color: white;
 }
+.frontpage-button {
+  background-color: #160A47;
+}
 .init-page {
   background-image: url("./src/images/Heroes.jpg");
-  width: 100%;
-  height: 100%;
+  width: 1275px;
+  height: 700px;
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
   font-family: 'Permanent Marker', cursive;
 }
 .init-page-header {
-  color: #ED1C24;
+  color: #F7FF3F;
 }
 .dropdown {
   color: #FFFFFF;

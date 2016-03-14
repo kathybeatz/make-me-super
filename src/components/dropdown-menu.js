@@ -7,8 +7,8 @@ export default class DropdownMenu extends Component {
   render(){
     return (
       <div className="dropdown">
-        <button className="btn btn-primary dropdown-toggle" type="button">
-         <Link to="/search" className="link">Batman !</Link>
+        <button className="btn btn-primary dropdown-toggle frontpage-button" type="button">
+         <Link to="/search" className="link">Begin Transformation !</Link>
         </button>
           <ul className="nav">
             <li><a href="#">Profiles</a></li>
