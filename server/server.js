@@ -59,11 +59,11 @@ app.get('/api/getActivity', function(req, res) {
 
 app.post('/api/postActivity', function(req, res) {
 
-  console.log('inside server, post request! request.body: ', req.body);
-
   var savedActivity = new SavedActivity({
     Title: req.body.Title,
-    Locale: req.body.Locale
+    Locale: req.body.Locale,
+    Description: req.body.Description,
+    Links: req.body.Links
   });
 
   savedActivity.save(function(err) {
@@ -76,11 +76,9 @@ app.post('/api/postActivity', function(req, res) {
     }
   });
 
-  res.send('finished post request');
+  res.end('finished post request');
 });
 
 app.listen(port, function () {
  console.log('Proxy listening on port 3000!');
 });
-
-/////////////////////////////

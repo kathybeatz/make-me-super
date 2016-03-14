@@ -2,27 +2,40 @@ import React, { Component } from 'react';
 
 //<img src={this.state.imageUrl} className="img-rounded" alt="Your Alter Ego!" width="304" height="236" />
 
+//the hack object to hold images
+const urlArray = [
+  "../src/images/spiderman-symbol.png",
+  "../src/images/green_lantern-symbol.png",
+  "../src/images/wonder_woman-symbol.png",
+  "../src/images/batman-symbol.png"
+];
+
+let i = 0;
+
 export default class MakeMeSuperButton extends Component {
 
   constructor() {
     super();
 
     this.state = {
-      imageUrl: "http://www.jdslabs.com/images/engraving/cart/2016/2/batman.png"
+      imageUrl: urlArray[0]
     };
   }
 
 
   render(){
     return (
-      <div>
-      <img src={this.state.imageUrl} alt="Your Alter Ego!" width="360" height="300" />
+      <div onClick={this.clickhandler.bind(this)} className="super-button">
+      <img src={this.state.imageUrl} alt="Your Alter Ego!" width="400" height="315" />
 
       </div>
     )
   }
 
   clickhandler() {
-    this.setState({ imageUrl: ''})
+    if(urlArray[i + 1]){
+      this.setState({ imageUrl: urlArray[i + 1] })
+      i++;
+    }
   }
 }

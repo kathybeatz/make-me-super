@@ -5,6 +5,11 @@ import InitPageHeader from './init-page-header';
 import MakeMeSuperButton from './init-page-button';
 import DropdownMenu from './dropdown-menu';
 
+//the proper object to hold the images
+const imageUrls = {
+  batman: "../src/images/spiderman-symbol.png",
+}
+
 
 
 export default class App extends Component {
@@ -17,4 +22,5 @@ export default class App extends Component {
       </div>
     )
   }
+
 }

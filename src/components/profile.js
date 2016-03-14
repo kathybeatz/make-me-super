@@ -31,7 +31,14 @@ componentWillMount() {
  
     
     return (
+
       <div className="profileContainer">
+
+      <div>
+      <h1>My Profile</h1>
+
+      <table>
+
 
        <h1 className="profileHead">My Profile</h1>
        <h2 className="Welcome">Welcome, Batman!</h2>
@@ -66,14 +73,17 @@ componentWillMount() {
       <td>www.hotairballooncappadocia.com/Ballooning-Safety.html</td>
     </tr>
 
+
   </tbody>
   </table>
        </div>
+
+
+      </table>
+
       </div>
 
     );
   };
 
 }
-
-
