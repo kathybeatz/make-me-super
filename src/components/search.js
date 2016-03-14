@@ -36,7 +36,7 @@ export default class Search extends Component {
         <div className="row paddingTop" id="activitiesList">
 
           <div className="col-md-4">
-            <p className="lead activityText">Wingsuit Over Dubai</p>
+            <p className="lead activityText"><a href="http://www.skydivedubai.ae/experienced/freefly-wingsuit.html" target="_blank">Wingsuit Over Dubai</a></p>
             <iframe width="300" height="300" src="https://www.youtube.com/embed/EZEgz50VMsk" frameborder="0" allowfullscreen></iframe>
             <label className="paragraphText">
               Always wanted to learn how to fly? This is your chance, Take to the air, then soar through the sky, thinking to yourself you are Batman.
@@ -46,7 +46,7 @@ export default class Search extends Component {
           </div>
 
           <div className="col-md-4">
-            <p className="lead activityText">Skydive Namibia</p>
+            <p className="lead activityText"><a href="http://www.skydiveswakop.com.na/" target="_blank">Skydive Namibia</a></p>
             <iframe width="300" height="300" src="https://www.youtube.com/embed/oipcXrHZZV4" frameborder="0" allowfullscreen></iframe>
             <label className="paragraphText">
               Two thousand feet in the air overlooking one of the most iconic landscapes in all of air or wind sports.
@@ -56,7 +56,7 @@ export default class Search extends Component {
           </div>
 
           <div className="col-md-4">
-            <p className="lead activityText">Hot Air Balloon in Cappadocia</p>
+            <p className="lead activityText"><a href="http://www.viator.com/Cappadocia-tours/Balloon-Rides/d5609-g1-c3?pref=02" target="_blank">Hot Air Balloon in Cappadocia</a></p>
             <iframe width="300" height="300" src="https://www.youtube.com/embed/bNtwfVP0OHs" frameborder="0" allowfullscreen></iframe>
             <label className="paragraphText">
               Fall a thousand feet as you take in the incredible juxtaposition of bright blue Atlantic Ocean and the sprawling brown Namib desert.
@@ -66,7 +66,7 @@ export default class Search extends Component {
           </div>
 
           <div className="col-md-4 paddingTop">
-            <p className="lead activityText">Parasailing Catalina Island</p>
+            <p className="lead activityText"><a href="http://web.catalinachamber.com/Water-Activities/Para-Sailing" target="_blank">Parasailing Catalina Island</a></p>
             <iframe width="300" height="300" src="https://www.youtube.com/embed/7WChchYbVEo" frameborder="0" allowfullscreen></iframe>
             <label className="paragraphText">
               Part sea, part air, but completely awesome, ascend six hundred feet harnessed to a speed-boat hoisted parachute Take in spectacular vistas of clear Pacific Coast waters, rugged Catalina Island Terrain, and the whimsically arranged city of Avalon An ultimate adventure on Catalina, and, may be free of charge on your birthday.
@@ -76,7 +76,7 @@ export default class Search extends Component {
           </div>
 
           <div className="col-md-4 paddingTop">
-            <p className="lead activityText">Carnaval in Bahia</p>
+            <p className="lead activityText"><a href="http://www.salvadorcarnival.info/" target="_blank">Carnaval in Bahia</a></p>
             <iframe width="300" height="300" src="https://www.youtube.com/embed/jdQFPhuvG_c" frameborder="0" allowfullscreen></iframe>
             <label className="paragraphText">
               Go on an authentic Carnaval experience without all the tourists Enjoy Carnaval in Bahia!
@@ -86,7 +86,7 @@ export default class Search extends Component {
           </div>
 
           <div className="col-md-4 paddingTop">
-            <p className="lead activityText">Underground Clubbing in Berghain</p>
+            <p className="lead activityText"><a href="http://ostgut.de/" target="_blank">Underground Clubbing in Berghain</a></p>
             <iframe width="300" height="300" src="https://www.youtube.com/embed/0buhM4bbAx4" frameborder="0" allowfullscreen></iframe>
             <label className="paragraphText">
               Go clubbing at most exclusive nightclub in Berlin Do not forget to wear all black to increase your chances of getting in and take a nap before heading out!
