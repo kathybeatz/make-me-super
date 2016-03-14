@@ -6,13 +6,23 @@ export default class Search extends Component {
 
   handlePost() {
 
-    axios.post('/api/postActivity', { Title: 'wingsuit over Dubai', Locale: 'Dubai' })
-      .then(function(response) {
-        console.log('handlePost() response.data: ', response.data, ' response.status: ', response.status);
-      })
-      .catch(function(response) {
-        console.log('handlePost() error: ', response.data);
-      });
+    axios.all([
+      axios.post('/api/postActivity', { Title: 'Wingsuit over Dubai', Locale: 'Dubai, United Arab Emirates',
+        Description: 'Always wanted to learn how to fly? This is your chance. Take to the air, then soar through the sky, thinking to yourself \'this is what it\'s like to be Batman\'. Pre-requisite: Skydive certification. See Freefall University',
+        Links: 'www.skydivedubai.ae/sponsorship/wingusit.html' }),
+      axios.post('/api/postActivity', { Title: 'Hot Air Balloon in Cappadocia', Locale: 'Cappadocia, Turkey',
+        Description: '2,000 feet in the air overlooking one of the most iconic landscapes in all of air or wind sports',
+        Links: 'www.hotairballooncappadocia.com/Ballooning-Safety.html' }),
+      axios.post('/api/postActivity', { Title: 'Skydive Namibia', Locale: 'Swakopmund, Namibia',
+        Description: 'Fall 10000 feet as you take in the incredible juxtaposition of bright blue Atlantic Ocean and the sprawling brown Namib desert.',
+        Links: 'www.skydiveswakopmund.com/swakopmund/' })
+    ])
+    .then(axios.spread(function(response1, response2, response3) {
+      console.log('handlePost() success!');
+    }))
+    .catch(function(response) {
+      console.log('handlePost() error!');
+    });
   }
 
   render(){
