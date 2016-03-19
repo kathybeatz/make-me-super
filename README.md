@@ -1,35 +1,38 @@
-# Make Me Super
+# webpack-express-boilerplate
+A boilerplate for running a Webpack workflow in Node express
 
-Make Me Super is an application built to enable people to manifest their alter-ego in its purest form. We all have a superhero inside of us, and certain superhero archetypes resonate with us more than others. Make Me Super allows users to become their hero of choice by engaging our list of curated (but customizable) activities - often outside of the average person's comfort zone - that are consistent with their chosen character's experiences, expertise, powers and intent. Anyone can become super, one just has to do the things they've never done to do so.
+Please read the following article: [The ultimate Webpack setup](http://www.christianalfoni.com/articles/2015_04_19_The-ultimate-webpack-setup) to know more about this boilerplate.
 
-##Tech Stack##
+## Major update to project
+Inspired by [this project](https://github.com/vesparny/react-kickstart) and the evolving of [react-transform](https://github.com/gaearon/react-transform-boilerplate) and [CSS Modules]((http://glenmaddern.com/articles/css-modules)), this project has gotten a major upgrade.
 
-Make Me Super makes use of Reactjs for our Front End components, Express and Nodejs for our server/developer environment, and MongoDB (MLab.com, specifically) for our database hosting.
+**NOTE!** Use the latest version of Node, 4.x.x.
+
+## Install and Running
+`git clone https://github.com/christianalfoni/webpack-express-boilerplate.git`
+
+or just export the files:
+
+`svn export https://github.com/christianalfoni/webpack-express-boilerplate/trunk ./dir`
+
+1. cd webpack-express-boilerplate
+2. npm install
+3. npm start
+4. navigate to http://localhost:3000 in your browser of choice.
 
 
-##Installation##
+## Overview
 
-All package dependencies for our project are noted in our package.json file.
+### React by default
+The project runs with React by default and hot replacement of changes to the modules. Currently it is on 0.14.3.
 
-After downloading our project:
+### CSS Modules
+CSS files loaded into components are locally scoped and you can point to class names with javascript. You can also compose classes together, also from other files. These are also hot loaded. Read more about them [here](http://glenmaddern.com/articles/css-modules).
 
-Make your way in to our project's root directory (make-me-super) by way of the change directory (cd) command.
+To turn off CSS Modules remove it from the `webpack.config.js` file.
 
-Once in the directory, run npm install in the terminal to make all necessary packages available for development.
+### Babel and Linting
+Both Node server and frontend code runs with Babel. And all of it is linted. With atom you install the `linter` package, then `linter-eslint` and `linter-jscs`. You are covered. Also run `npm run eslint` or `npm run jscs` to verify all files. I would recommend installing `language-babel` package too for syntax highlighting
 
-
-##Usage##
-
-##Contributing##
-
-Contributors should upload changes to their own fork and make a pull request.
-
-##Team##
-
-Scrum Master: Jenna Vuong
-Lead Developer: LeChristopher Blackwell
-Product Owner: Justin Bell
-
-##License##
-
-The MIT License (MIT) Copyright (c) 2016 Happy-Wolfpack
+### Beautify
+With a beautify package installed in your editor it will also do that
