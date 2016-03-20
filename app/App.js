@@ -4,7 +4,7 @@ import { render } from 'react-dom'
 import fetchCharacters from './actions/index'
 import CharacterList from './CharacterList'
 
-export default class Character extends Component {
+export default class App extends Component {
   constructor(props) {
     super(props)
   }
@@ -24,7 +24,7 @@ export default class Character extends Component {
 
 }
 
-Character.propTypes = {
+App.propTypes = {
   characters: PropTypes.array.isRequired
 }
 
@@ -35,4 +35,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps)(Character)
+export default connect(mapStateToProps)(App)
