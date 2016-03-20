@@ -11,13 +11,11 @@ function character(state = {
 }, action) {
   switch (action.type) {
     case SELECT_CHARACTER:
-    console.log('SELECT_CHARACTER')
       return Object.assign({}, state, {
         character: action.character,
         selected: true
       })
     case DESELECT_CHARACTER:
-      console.log('DESELECT_CHARACTER')
       return Object.assign({}, state, {
         character: {},
         selected: false
@@ -40,7 +38,6 @@ function characterDetails(state = {}, action) {
 
 
 function listCharacters(state = [], action) {
-
   switch (action.type) {
     case RECEIVE_CHARACTERS:
       return action.characters

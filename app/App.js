@@ -16,7 +16,8 @@ export default class App extends Component {
   }
 
   handleClick(character) {
-    if (this.props.selection) {
+    console.log(character)
+    if (character.name === this.props.character.name) {
       this.props.dispatch(deselectCharacter(character))
     } else {
       this.props.dispatch(selectCharacter(character))
@@ -25,12 +26,11 @@ export default class App extends Component {
 
   render(){
     const { characters, character, selection } = this.props
-    console.log(selection)
     return (
       <div>
         <CharacterList characters={characters}
                        handleClick={this.handleClick} />
-        {selection ? 
+        { selection ? 
           <CharacterDetails character={character} /> :
           <div></div>
         }
@@ -49,7 +49,6 @@ function mapStateToProps(state) {
   const characters = state.listCharacters || []
   const character = state.characterDetails.character || {}
   const selection = state.characterDetails.selected || false
-  console.log(selection)
   return {
     characters,
     character,
