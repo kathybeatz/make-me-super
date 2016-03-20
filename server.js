@@ -13,7 +13,44 @@ var isProduction = process.env.NODE_ENV === 'production';
 var port = isProduction ? process.env.PORT : 3000;
 var publicPath = path.resolve(__dirname, 'public');
 
-var kathybeatz = ['hello', 'mamma mia', 'eh tu brute', 'what the fuck was i thinking', 'who are you?'];
+var kathybeatz = [
+  { name: 'Albrey',
+    image: 'http://static1.squarespace.com/static/54d53828e4b0e1d1a7d75bbf/t/56b10dc962cd9416699645ce/1454443988362/?format=300w',
+    attributes: {
+      strength: 80,
+      intelligence: 70,
+      charisma: 60,
+      otherthing: 42
+    }
+  },
+  { name: 'Bianca',
+    image: 'http://static1.squarespace.com/static/54d53828e4b0e1d1a7d75bbf/t/56b10e458259b562ca19c5aa/1454444106294/?format=300w',
+    attributes: {
+      strength: 80,
+      intelligence: 70,
+      charisma: 60,
+      otherthing: 42
+    }
+  },
+  { name: 'Jamil',
+    image: 'http://static1.squarespace.com/static/54d53828e4b0e1d1a7d75bbf/56b0fba407eaa096f03e712f/56b0fbce40261d778a9447d4/1454439374960/jamil_round.png?format=300w',
+    attributes: {
+      strength: 80,
+      intelligence: 70,
+      charisma: 60,
+      otherthing: 42
+    }
+  },
+  { name: 'Claire',
+    image: 'http://static1.squarespace.com/static/54d53828e4b0e1d1a7d75bbf/56b0fba407eaa096f03e712f/56b0fc1804426214620e8b33/1454439450733/claire_round.png?format=300w',
+    attributes: {
+      strength: 80,
+      intelligence: 70,
+      charisma: 60,
+      otherthing: 42
+    }
+  }
+  ];
 app.use(express.static(publicPath));
 
 // If you only want this for development, you would of course

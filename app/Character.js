@@ -3,8 +3,6 @@ import { connect } from 'react-redux'
 import { render } from 'react-dom'
 import fetchCharacters from './actions/index'
 
-//require ('./App.css');
-
 export default class Character extends Component {
   constructor(props) {
   	super(props)
@@ -15,11 +13,11 @@ export default class Character extends Component {
   	dispatch(fetchCharacters())
   }
   render(){
-    const characters = this.props
     return (
       <ul>
-        hello
-        {this.props.characters}
+        {this.props.characters.map((character, i) => 
+          <img key={i} src={character.image} />
+        )}
       </ul>
     )
   }
