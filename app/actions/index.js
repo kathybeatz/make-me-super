@@ -17,7 +17,7 @@ function receiveCharacters(json) {
   }
 }
 
-export default function fetchCharacters () {
+export function fetchCharacters () {
 	return dispatch => {
     return fetch('/images')
       .then(response => response.json())

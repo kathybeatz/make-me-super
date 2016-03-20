@@ -11,7 +11,6 @@ export default class CharacterList extends Component {
       </ul>
     )
   }
-
 }
 
 CharacterList.propTypes = {
