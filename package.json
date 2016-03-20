@@ -1,6 +1,6 @@
 {
     "engines": {
-    "node": "4.2.6"
+    "node": "4.4.0"
   },
   "main": "server.js",
   "scripts": {

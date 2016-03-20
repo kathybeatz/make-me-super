@@ -2,9 +2,6 @@
 
 var path = require('path');
 var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var StatsPlugin = require('stats-webpack-plugin');
 
 module.exports = {
   entry: [
@@ -34,6 +31,6 @@ module.exports = {
       query: {
         "presets": ["es2015", "stage-0", "react"]
       }
-    },
+    }],
   },
 };
