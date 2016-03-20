@@ -1,20 +1,32 @@
-import { RECEIVE_CHARACTERS } from './actions/index'
 import { combineReducers } from 'redux'
+
+import { SELECT_CHARACTER, RECEIVE_CHARACTERS } from './actions/index'
 
 const intialState = [];
 
-function characters(state = intialState, action) {
-
-  if (action.type === 'RECEIVE_CHARACTERS') {
-    return action.posts;
+function selectCharacter(state = {}, action) {
+	switch (action.type) {
+    case SELECT_CHARACTER:
+      return action.character
+    default:
+      return state
   }
+}
 
-  return state;
+function listCharacters(state = intialState, action) {
+
+  switch (action.type) {
+    case RECEIVE_CHARACTERS:
+      return action.characters
+    default:
+      return state
+  }
 };
 
 
 const rootReducer = combineReducers({
-	characters
+	selectCharacter,
+	listCharacters
 })
 
 export default rootReducer

@@ -1,27 +1,26 @@
 import fetch from 'isomorphic-fetch'
 
-export const REQUEST_CHARACTERS = 'REQUEST_CHARACTERS'
 export const RECEIVE_CHARACTERS = 'RECEIVE_CHARACTERS'
+export const SELECT_CHARACTER = 'SELECT_CHARACTER'
 
-function requestCharacters() {
+export function selectCharacter(character) {
   return {
-  	type: REQUEST_CHARACTERS, 
-  	// characters
+  	type: SELECT_CHARACTER,
+  	character
   }
 }
 
 function receiveCharacters(json) {
   return {
     type: RECEIVE_CHARACTERS,
-    posts: json
+    characters: json
   }
 }
 
 export default function fetchCharacters () {
 	return dispatch => {
-    dispatch(requestCharacters())
     return fetch('/images')
       .then(response => response.json())
-      .then(res => dispatch(receiveCharacters(res)))
+      .then(json => dispatch(receiveCharacters(json)))
   	}
 }
