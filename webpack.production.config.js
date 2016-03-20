@@ -1,36 +1,36 @@
-'use strict';
-
-var path = require('path');
 var webpack = require('webpack');
+var path = require('path');
+var nodeModulesPath = path.resolve(__dirname, 'node_modules');
+var buildPath = path.resolve(__dirname, 'public', 'build');
+var mainPath = path.resolve(__dirname, 'app', 'main.js');
 
-module.exports = {
-  entry: [
-    path.join(__dirname, 'app/main.js')
-  ],
+var config = {
+
+  // We change to normal source mapping
+  devtool: 'source-map',
+  entry: mainPath,
   output: {
-    path: path.join(__dirname, '/dist/'),
-    filename: '[name]-[hash].min.js',
-    publicPath: '/'
+    path: buildPath,
+    filename: 'bundle.js'
   },
   plugins: [
     new webpack.optimize.UglifyJsPlugin({
-      compressor: {
-        warnings: false,
-        screw_ie8: true
+      minimize: true,
+      compress: {
+        warnings: false
       }
-    }),
+    })
   ],
-  resolve: {
-    extensions: ['', '.js', '.jsx']
-  },
   module: {
     loaders: [{
-      test: /\.js?$/,
-      exclude: /node_modules/,
-      loader: 'babel?presets[]=react,presets[]=es2015',
-      query: {
-        "presets": ["es2015", "stage-0", "react"]
-      }
-    }],
-  },
+      test: /\.js$/,
+      loader: 'babel',
+      exclude: [nodeModulesPath]
+    },{
+      test: /\.css$/,
+      loader: 'style!css'
+    }]
+  }
 };
+
+module.exports = config;
