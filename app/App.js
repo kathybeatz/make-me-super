@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { render } from 'react-dom'
-import  { fetchCharacters, selectCharacter } from './actions'
+import  { fetchCharacters, selectCharacter, deselectCharacter } from './actions'
 import CharacterList from './CharacterList'
 import CharacterDetails from './CharacterDetails'
 
@@ -17,14 +17,15 @@ export default class App extends Component {
 
   handleClick(character) {
     if (this.props.selection) {
-      this.props.dispatch(selectCharacter())
+      this.props.dispatch(deselectCharacter(character))
+    } else {
+      this.props.dispatch(selectCharacter(character))
     }
-    this.props.dispatch(selectCharacter(character))
   }
 
   render(){
     const { characters, character, selection } = this.props
-    console.log(character)
+    console.log(selection)
     return (
       <div>
         <CharacterList characters={characters}
@@ -45,10 +46,10 @@ App.propTypes = {
 }
 
 function mapStateToProps(state) {
-  console.log(state);
   const characters = state.listCharacters || []
   const character = state.characterDetails.character || {}
   const selection = state.characterDetails.selected || false
+  console.log(selection)
   return {
     characters,
     character,
