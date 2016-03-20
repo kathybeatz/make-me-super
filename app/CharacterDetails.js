@@ -1,17 +1,15 @@
 import React, { PropTypes, Component } from 'react'
 
-export default class Details extends Component {
+export default class CharacterDetails extends Component {
   render() {
     return (
       <ul>
-        {this.props.posts.map((post, i) =>
-          <li key={i}>{post.title}</li>
+      	{this.props.character.name}
+        {Object.keys(this.props.character.attributes).map((key) => 
+        	<li>Key: {key}, Value: {this.props.character.attributes[key]} </li>
         )}
       </ul>
     )
   }
 }
 
-Posts.propTypes = {
-  posts: PropTypes.array.isRequired
-}

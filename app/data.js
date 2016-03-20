@@ -1,4 +1,4 @@
-const dummyData = {
+module.exports = [
 	{ name: 'Albrey',
 	image: 'http://static1.squarespace.com/static/54d53828e4b0e1d1a7d75bbf/t/56b10dc962cd9416699645ce/1454443988362/?format=300w',
 	  attributes: 
@@ -98,7 +98,6 @@ const dummyData = {
 	  	  bathroomBreak: 60,
 	  	  luck: 70 }
 	 }
-};
+];
 
 
-export default dummyData
