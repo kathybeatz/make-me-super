@@ -1,19 +1,44 @@
 import { combineReducers } from 'redux'
 
-import { SELECT_CHARACTER, RECEIVE_CHARACTERS } from './actions/index'
+import { 
+  SELECT_CHARACTER, RECEIVE_CHARACTERS, DESELECT_CHARACTER
+   } from './actions/index'
 
-const intialState = [];
 
-function selectCharacter(state = {}, action) {
-	switch (action.type) {
+function character(state = {
+  character: {},
+  selected: false
+}, action) {
+  switch (action.type) {
     case SELECT_CHARACTER:
-      return action.character
+    console.log(action.character)
+      return Object.assign({}, state, {
+        character: action.character,
+        selected: true
+      })
+    case DESELECT_CHARACTER:
+      return Object.assign({}, state, {
+        character: {},
+        selected: false
+      })
     default:
       return state
   }
 }
 
-function listCharacters(state = intialState, action) {
+function characterDetails(state = {}, action) {
+  switch (action.type) {
+    case SELECT_CHARACTER:
+    case DESELECT_CHARACTER:
+      return character(state[action.character], action)
+    default:
+      return state
+  }
+}
+
+
+
+function listCharacters(state = [], action) {
 
   switch (action.type) {
     case RECEIVE_CHARACTERS:
@@ -25,7 +50,7 @@ function listCharacters(state = intialState, action) {
 
 
 const rootReducer = combineReducers({
-	selectCharacter,
+	characterDetails,
 	listCharacters
 })
 

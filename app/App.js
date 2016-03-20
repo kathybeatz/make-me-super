@@ -12,26 +12,26 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    const { dispatch } = this.props
-    dispatch(fetchCharacters())
+    this.props.dispatch(fetchCharacters())
   }
 
   handleClick(character) {
+    if (this.props.selection) {
+      this.props.dispatch(selectCharacter())
+    }
     this.props.dispatch(selectCharacter(character))
   }
 
   render(){
-    const { characters, character } = this.props
-    const isEmpty = character.name === undefined
-    console.log(isEmpty)
+    const { characters, character, selection } = this.props
     console.log(character)
     return (
       <div>
         <CharacterList characters={characters}
                        handleClick={this.handleClick} />
-        {isEmpty ? 
-          <div></div> :
-          <CharacterDetails character={character} />
+        {selection ? 
+          <CharacterDetails character={character} /> :
+          <div></div>
         }
       </div>
     )
@@ -40,15 +40,19 @@ export default class App extends Component {
 
 App.propTypes = {
   characters: PropTypes.array.isRequired,
-  character: PropTypes.object.isRequired
+  character: PropTypes.object.isRequired,
+  selection: PropTypes.bool.isRequired
 }
 
 function mapStateToProps(state) {
-  const characters = state.listCharacters
-  const character = state.selectCharacter
+  console.log(state);
+  const characters = state.listCharacters || []
+  const character = state.characterDetails.character || {}
+  const selection = state.characterDetails.selected || false
   return {
     characters,
-    character
+    character,
+    selection
   }
 }
 
