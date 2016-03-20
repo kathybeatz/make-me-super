@@ -24,7 +24,7 @@ var config = {
   module: {
     loaders: [{
       test: /\.js$/,
-      loader: 'babel',
+      loader: 'babel?presets[]=react,presets[]=es2015',
       exclude: [nodeModulesPath]
     },{
       test: /\.css$/,
