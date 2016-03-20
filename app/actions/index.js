@@ -24,8 +24,4 @@ export default function fetchCharacters () {
       .then(response => response.json())
       .then(res => dispatch(receiveCharacters(res)))
   	}
-
-	return {
-		type: REQUEST_CHARACTERS,
-	}
 }

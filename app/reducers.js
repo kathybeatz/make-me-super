@@ -3,8 +3,6 @@ import { combineReducers } from 'redux'
 
 const intialState = [];
 
-
-
 function characters(state = intialState, action) {
 
   if (action.type === 'RECEIVE_CHARACTERS') {
