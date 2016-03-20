@@ -1,16 +1,38 @@
-import React from 'react';
-import styles from './App.css';
+import React, { Component, PropTypes } from 'react'
+import { connect } from 'react-redux'
+import { render } from 'react-dom'
+import fetchCharacters from './actions/index'
+import CharacterList from './CharacterList'
 
-export default class App extends React.Component {
+export default class Character extends Component {
   constructor(props) {
-    super(props);
-    this.state = {test: 'foo'};
+    super(props)
   }
-  render() {
+
+  componentDidMount() {
+    const { dispatch } = this.props
+    dispatch(fetchCharacters())
+  }
+  render(){
+    const { characters } = this.props
     return (
-      <div className={styles.app}>
-        bar
+      <div>
+        <CharacterList characters={characters} />
       </div>
-    );
+    )
+  }
+
+}
+
+Character.propTypes = {
+  characters: PropTypes.array.isRequired
+}
+
+function mapStateToProps(state) {
+  const characters = state.characters || []
+  return {
+    characters
   }
 }
+
+export default connect(mapStateToProps)(Character)
