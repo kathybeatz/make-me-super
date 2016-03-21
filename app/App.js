@@ -52,10 +52,10 @@ export default class App extends Component {
         <CharacterList characters={characters}
                        handleClick={this.handleClick} />
         <div className="row">
-          <div className="col-md-6">
+          <div className="col-sm-6">
         { characterOne.selected ? <CharacterDetails character={characterOne} /> : <div></div> }
           </div>
-          <div className="col-md-6">
+          <div className="col-sm-6">
         { characterTwo.selected ? <CharacterDetails character={characterTwo} /> : <div></div> }
           </div>
         </div>

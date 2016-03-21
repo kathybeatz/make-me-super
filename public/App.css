@@ -12,13 +12,16 @@
 
 }
 
+.character-space {
+	width: 500px;
+}
+
 .character-img-size {
 	width: 20%;
 
 }
 
 .attributes-div {
-	width: 1000px;
 	height: 274px;
 	display: inline-block;
 }
