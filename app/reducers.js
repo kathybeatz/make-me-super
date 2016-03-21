@@ -7,18 +7,15 @@ import {
 
 function character(state = {
   character: {},
-  selected: false
 }, action) {
   switch (action.type) {
     case SELECT_CHARACTER:
       return Object.assign({}, state, {
         character: action.character,
-        selected: true
       })
     case DESELECT_CHARACTER:
       return Object.assign({}, state, {
         character: {},
-        selected: false
       })
     default:
       return state
@@ -35,7 +32,16 @@ function characterDetails(state = {}, action) {
   }
 }
 
-
+function selection(state = 0, action) {
+  switch (action.type) {
+    case SELECT_CHARACTER:
+      return state + 1
+    case DESELECT_CHARACTER:
+      return state - 1
+    default:
+      return state
+  }
+}
 
 function listCharacters(state = [], action) {
   switch (action.type) {
@@ -49,7 +55,8 @@ function listCharacters(state = [], action) {
 
 const rootReducer = combineReducers({
 	characterDetails,
-	listCharacters
+	listCharacters,
+  selection
 })
 
 export default rootReducer

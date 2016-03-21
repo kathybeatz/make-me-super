@@ -16,24 +16,22 @@ export default class App extends Component {
   }
 
   handleClick(character) {
-    console.log(character)
-    if (character.name === this.props.character.name) {
-      this.props.dispatch(deselectCharacter(character))
-    } else {
+    // if (character.name === this.props.characterOne.name) {
+    //   this.props.dispatch(deselectCharacter(character))
+    // } else {
       this.props.dispatch(selectCharacter(character))
-    }
+    //}
   }
 
   render(){
-    const { characters, character, selection } = this.props
+    const { characters, characterOne, characterTwo, selection } = this.props
+    console.log(characterOne)
     return (
       <div>
         <CharacterList characters={characters}
                        handleClick={this.handleClick} />
-        { selection ? 
-          <CharacterDetails character={character} /> :
-          <div></div>
-        }
+        { characterOne.name ? <CharacterDetails character={characterOne} /> : <div></div> }
+        { characterTwo.name ? <CharacterDetails character={characterTwo} /> : <div></div> }
       </div>
     )
   }
@@ -41,17 +39,23 @@ export default class App extends Component {
 
 App.propTypes = {
   characters: PropTypes.array.isRequired,
-  character: PropTypes.object.isRequired,
-  selection: PropTypes.bool.isRequired
+  characterOne: PropTypes.object.isRequired,
+  characterTwo: PropTypes.object.isRequired,
+  selection: PropTypes.number.isRequired,
 }
+//probably the best way to do this is to merge a 'selected' property onto each character and set it to true if selected
+//false otherwise and have a limit of two character details listed
 
 function mapStateToProps(state) {
   const characters = state.listCharacters || []
-  const character = state.characterDetails.character || {}
-  const selection = state.characterDetails.selected || false
+  const selection = state.selection || 0
+  const characterOne = state.selection === 1 || state.selection === 2 ? state.characterDetails.character : {}
+  const characterTwo = state.selection === 2 ? state.characterDetails.character : {}
+  console.log(selection)
   return {
     characters,
-    character,
+    characterOne,
+    characterTwo,
     selection
   }
 }
