@@ -1,0 +1,51 @@
+.character-div {
+	width: 60%;
+	height: 310px;
+	text-align: center;
+	margin-top: 5vh;
+	padding: 20px;
+  	margin: 0 auto;
+  	background-color: rgba(0, 0, 0, .3);
+  	border-radius: 10px;
+  	top: 18%;
+  	position: relative;
+
+}
+
+.character-img-size {
+	width: 20%;
+
+}
+
+.attributes-div {
+	width: 1000px;
+	height: 274px;
+	display: inline-block;
+}
+
+.attributes-box {
+	text-align: right;
+	width: 378px;
+	height: 200px;
+	display: inline-block;
+	text-align: center;
+	padding: 20px;
+  	margin: 0 auto;
+  	background-color: rgba(0, 0, 0, .3);
+  	border-radius: 10px;
+  	position: relative;
+
+}
+
+.attributes-pic {
+	width: 100px;
+}
+
+body {
+  background-image: url('character-background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center 60%; /* offset, for image-specific focal point */
+  height: 100vh;
+
+}

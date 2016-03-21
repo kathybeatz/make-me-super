@@ -44,17 +44,17 @@ export default class App extends Component {
   render() {
     const { characters, characterOne, characterTwo, selection, modal } = this.props
     return (
-      <div>
-        <CharacterList characters={characters}
-                       handleClick={this.handleClick} />
-        { characterOne.selected ? <CharacterDetails character={characterOne} /> : <div></div> }
-        { characterTwo.selected ? <CharacterDetails character={characterTwo} /> : <div></div> }
-        { characterOne.selected && characterTwo.selected ? 
-          <Fight characterOne={characterOne} 
-                 characterTwo={characterTwo}
-                 openModal={this.openModal}
-                 closeModal={this.closeModal}
-                 modal={modal} /> : <div></div> }
+      <div className="character-div">
+          <CharacterList characters={characters}
+                         handleClick={this.handleClick} />
+          { characterOne.selected ? <CharacterDetails character={characterOne} /> : <div></div> }
+          { characterTwo.selected ? <CharacterDetails character={characterTwo} /> : <div></div> }
+          { characterOne.selected && characterTwo.selected ? 
+            <Fight characterOne={characterOne} 
+                   characterTwo={characterTwo}
+                   openModal={this.openModal}
+                   closeModal={this.closeModal}
+                   modal={modal} /> : <div></div> }
       </div>
     )
   }

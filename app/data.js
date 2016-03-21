@@ -35,15 +35,6 @@ module.exports = [
 	  	  bathroomBreak: Math.floor(Math.random() * (100 - 0)),
 	  	  luck: Math.floor(Math.random() * (100 - 0)) }
 	 },
-	{ name: 'Krystal',
-	  image: 'http://static1.squarespace.com/static/54d53828e4b0e1d1a7d75bbf/56b0fba407eaa096f03e712f/56b0fbf2cf80a1b35a628fe7/1454439411318/krystal_round.png?format=300w',
-	  attributes: 
-	  	{ conjuring: Math.floor(Math.random() * (100 - 0)),
-	  	  scribery: Math.floor(Math.random() * (100 - 0)),
-	  	  empathy: Math.floor(Math.random() * (100 - 0)),
-	  	  bathroomBreak: Math.floor(Math.random() * (100 - 0)),
-	  	  luck: Math.floor(Math.random() * (100 - 0)) }
-	 },
 	{ name: 'Jazz',
 	  image: 'http://static1.squarespace.com/static/54d53828e4b0e1d1a7d75bbf/56b10eff7c65e4b78436f31d/56b10f0020c647701cab16c6/1454444289013/jazz_round.png?format=300w',
 	  attributes: 

@@ -6,7 +6,7 @@ export default class CharacterList extends Component {
     return (
       <ul>
         {this.props.characters.map((character, i) => 
-          <img onClick={e => handleClick(character)} key={i} src={character.image} />
+          <img className="character-img-size" onClick={e => handleClick(character)} key={i} src={character.image} />
         )}
       </ul>
     )
