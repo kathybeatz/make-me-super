@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { render } from 'react-dom'
 import fetchCharacters from './actions/index'
+import styles from '/App.css'
 
 export default class Character extends Component {
   constructor(props) {
@@ -14,11 +15,13 @@ export default class Character extends Component {
   }
   render(){
     return (
-      <ul>
-        {this.props.characters.map((character, i) => 
-          <img key={i} src={character.image} />
-        )}
-      </ul>
+      <div>
+        <ul>
+          {this.props.characters.map((character, i) => 
+            <img key={i} src={character.image} />
+          )}
+        </ul>
+      </div>
     )
   }
 
