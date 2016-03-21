@@ -10,7 +10,6 @@ function modal(state = {
 }, action) {
   switch (action.type) {
     case OPEN_MODAL:
-    console.log(state);
       return Object.assign({}, state, {
         modal: true
       })

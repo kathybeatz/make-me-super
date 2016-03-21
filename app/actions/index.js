@@ -14,11 +14,9 @@ export function openModal() {
   }
 }
 
-export function closeModal(characterOne, characterTwo) {
+export function closeModal() {
   return {
     type: CLOSE_MODAL,
-    characterOne,
-    characterTwo
   }
 }
 
