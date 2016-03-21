@@ -5,6 +5,8 @@ import { createStore, applyMiddleware } from 'redux';
 import App from './App';
 import rootReducer from './reducers';
 import thunkMiddleware from 'redux-thunk';
+import 'jquery';
+import 'bootstrap-webpack'
 
 const store = applyMiddleware(thunkMiddleware)(createStore);
 

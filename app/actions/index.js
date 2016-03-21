@@ -5,6 +5,20 @@ export const SELECT_CHARACTER = 'SELECT_CHARACTER'
 export const SELECT_SECOND = 'SELECT_SECOND'
 export const DESELECT_CHARACTER = 'DESELECT_CHARACTER'
 export const DESELECT_SECOND = 'DESELECT_SECOND'
+export const OPEN_MODAL = 'OPEN_MODAL'
+export const CLOSE_MODAL = 'CLOSE_MODAL'
+
+export function openModal() {
+  return {
+    type: OPEN_MODAL
+  }
+}
+
+export function closeModal() {
+  return {
+    type: CLOSE_MODAL
+  }
+}
 
 export function selectCharacter(character) {
   return {

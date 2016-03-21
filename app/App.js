@@ -1,18 +1,29 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { render } from 'react-dom'
-import  { fetchCharacters, selectCharacter, selectSecondCharacter, deselectCharacter, deselectSecondCharacter } from './actions'
+import  { fetchCharacters, selectCharacter, selectSecondCharacter, deselectCharacter, deselectSecondCharacter, openModal, closeModal } from './actions'
 import CharacterList from './CharacterList'
 import CharacterDetails from './CharacterDetails'
+import Fight from './Fight'
 
 export default class App extends Component {
   constructor(props) {
     super(props)
     this.handleClick = this.handleClick.bind(this)
+    this.openModal = this.openModal.bind(this)
+    this.closeModal = this.closeModal.bind(this)
   }
 
   componentDidMount() {
     this.props.dispatch(fetchCharacters())
+  }
+
+  openModal() {
+    this.props.dispatch(openModal())
+  }
+
+  closeModal() {
+    this.props.dispatch(closeModal())
   }
 
   handleClick(character) {
@@ -30,14 +41,20 @@ export default class App extends Component {
     } 
   }
 
-  render(){
-    const { characters, characterOne, characterTwo, selection } = this.props
+  render() {
+    const { characters, characterOne, characterTwo, selection, modal } = this.props
     return (
       <div>
         <CharacterList characters={characters}
                        handleClick={this.handleClick} />
         { characterOne.selected ? <CharacterDetails character={characterOne} /> : <div></div> }
         { characterTwo.selected ? <CharacterDetails character={characterTwo} /> : <div></div> }
+        { characterOne.selected && characterTwo.selected ? 
+          <Fight characterOne={characterOne} 
+                 characterTwo={characterTwo}
+                 openModal={this.openModal}
+                 closeModal={this.closeModal}
+                 modal={modal} /> : <div></div> }
       </div>
     )
   }
@@ -46,19 +63,20 @@ export default class App extends Component {
 App.propTypes = {
   characters: PropTypes.array.isRequired,
   characterOne: PropTypes.object.isRequired,
-  characterTwo: PropTypes.object.isRequired,
+  characterTwo: PropTypes.object.isRequired
 }
-//probably the best way to do this is to merge a 'selected' property onto each character and set it to true if selected
-//false otherwise and have a limit of two character details listed
 
 function mapStateToProps(state) {
   const characters = state.listCharacters
   const characterOne = state.characterDetails
   const characterTwo = state.characterTwoDetails
+  const modal = state.modal
+  console.log(modal)
   return {
     characters,
     characterOne,
     characterTwo,
+    modal
   }
 }
 

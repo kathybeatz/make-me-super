@@ -2,8 +2,26 @@ import { combineReducers } from 'redux'
 import merge from 'lodash/merge'
 
 import { 
-  SELECT_CHARACTER, SELECT_SECOND, RECEIVE_CHARACTERS, DESELECT_CHARACTER, DESELECT_SECOND
+  SELECT_CHARACTER, SELECT_SECOND, RECEIVE_CHARACTERS, DESELECT_CHARACTER, DESELECT_SECOND, OPEN_MODAL, CLOSE_MODAL
    } from './actions/index'
+
+function modal(state = {
+  modal: false
+}, action) {
+  switch (action.type) {
+    case OPEN_MODAL:
+      console.log('hello')
+      return Object.assign({}, state, {
+        modal: true
+      })
+    case CLOSE_MODAL:
+      return Object.assign({}, state, {
+        modal: false
+      })
+    default:
+      return state
+  }
+}
 
 function characterDetails(state = {
   selected: false
@@ -52,7 +70,8 @@ function listCharacters(state = [], action) {
 const rootReducer = combineReducers({
 	characterDetails,
 	listCharacters,
-  characterTwoDetails
+  characterTwoDetails,
+  modal
 })
 
 export default rootReducer

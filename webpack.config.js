@@ -1,4 +1,4 @@
-var Webpack = require('webpack');
+var webpack = require('webpack');
 var path = require('path');
 var nodeModulesPath = path.resolve(__dirname, 'node_modules');
 var buildPath = path.resolve(__dirname, 'public', 'build');
@@ -33,6 +33,7 @@ var config = {
     // localhost:3000/build. That makes proxying easier to handle
     publicPath: '/build/'
   },
+
   module: {
 
     loaders: [
@@ -49,15 +50,30 @@ var config = {
     // expand with less-loader etc.
     {
       test: /\.css$/,
-      loader: 'style!css'
-    }
-
+      loader: 'style-loader!css-loader'
+    },
+    { test: require.resolve("jquery"), loader: "imports?jQuery=jquery" },
+      { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file" },
+      { test: /\.(woff|woff2)$/, loader:"url?prefix=font/&limit=5000" },
+      { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/octet-stream" },
+      { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=image/svg+xml" }
     ]
   },
-
+  resolve: {
+        extensions: ['', '.js', '.jsx', '.css'],
+        modulesDirectories: [
+          'node_modules'
+        ]        
+    },
   // We have to manually add the Hot Replacement plugin when running
   // from Node
-  plugins: [new Webpack.HotModuleReplacementPlugin()]
+  plugins: [
+  new webpack.HotModuleReplacementPlugin(),
+  new webpack.ProvidePlugin({
+           $: "jquery",
+           jQuery: "jquery"
+       })
+  ]
 };
 
 module.exports = config;
