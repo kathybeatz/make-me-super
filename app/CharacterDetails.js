@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Button, ProgressBar } from 'react-bootstrap'
 
 export default class CharacterDetails extends Component {
   render() {
@@ -11,7 +12,9 @@ export default class CharacterDetails extends Component {
         <ul>
         	{this.props.character.name}
           {Object.keys(this.props.character.attributes).map((key) => 
-          	<li>Key: {key}, Value: {this.props.character.attributes[key]} </li>
+          	<div>{key}
+              <ProgressBar now={this.props.character.attributes[key]} label={"%(now)s"}/>
+            </div>
           )}
         </ul>
         </div>
