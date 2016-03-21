@@ -10,13 +10,13 @@ function modal(state = {
 }, action) {
   switch (action.type) {
     case OPEN_MODAL:
-      console.log('hello')
+    console.log(state);
       return Object.assign({}, state, {
         modal: true
       })
     case CLOSE_MODAL:
       return Object.assign({}, state, {
-        modal: false
+        modal: false,
       })
     default:
       return state
@@ -35,10 +35,6 @@ function characterDetails(state = {
       return merge({}, {
         selected: false
       })
-    case OPEN_MODAL:
-      return merge({}, {
-        selected: false
-      })
     default:
       return state
   }
@@ -53,10 +49,6 @@ function characterTwoDetails(state = {
         selected: true
       })
     case DESELECT_SECOND:
-      return merge({}, {
-        selected: false
-      })
-    case OPEN_MODAL:
       return merge({}, {
         selected: false
       })

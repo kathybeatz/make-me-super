@@ -23,7 +23,10 @@ export default class App extends Component {
   }
 
   closeModal() {
-    this.props.dispatch(closeModal())
+    const { dispatch, characterOne, characterTwo } = this.props
+    dispatch(closeModal())
+    dispatch(deselectSecondCharacter(characterOne))
+    dispatch(deselectCharacter(characterTwo))
   }
 
   handleClick(character) {
@@ -71,7 +74,7 @@ function mapStateToProps(state) {
   const characterOne = state.characterDetails
   const characterTwo = state.characterTwoDetails
   const modal = state.modal
-  console.log(modal)
+  console.log(state)
   return {
     characters,
     characterOne,
