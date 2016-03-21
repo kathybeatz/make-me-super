@@ -1,3 +1,9 @@
+.character-name {
+  font-weight: bold;
+  font-size: 30px;
+  color: #ffffff;
+}
+
 .character-div {
 	width: 60%;
 	height: 310px;
@@ -7,23 +13,25 @@
   	margin: 0 auto;
   	background-color: rgba(0, 0, 0, .3);
   	border-radius: 10px;
-  	top: 18%;
   	position: relative;
 
 }
 
-.character-space {
-	width: 500px;
+.character-img-size {
+	width: 140px;
+
 }
 
-.character-img-size {
-	width: 20%;
-
+.select-character {
+  font-weight: bold;
+  font-size: 25px;
+  color: #ffffff;
 }
 
 .attributes-div {
 	height: 274px;
 	display: inline-block;
+	color: #ffffff;
 }
 
 .attributes-box {
@@ -33,15 +41,18 @@
 	text-align: center;
 	padding: 20px;
   	margin: 0 auto;
-  	background-color: rgba(0, 0, 0, .3);
+  	background-color: #ffffff;
   	border-radius: 10px;
   	position: relative;
   	color: #ffffff;
-
 }
 
 .attributes-pic {
 	width: 100px;
+}
+
+.attribute-font {
+	color: #ffffff;
 }
 
 body {
@@ -50,6 +61,13 @@ body {
   background-repeat: no-repeat;
   background-position: center 60%; /* offset, for image-specific focal point */
   height: 100vh;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 50px;
+  color: #ffffff;
+  text-align: center;
 }
 
 .winner {

@@ -9,9 +9,11 @@ export default class CharacterDetails extends Component {
           <img className="attributes-pic" src={this.props.character.image}/>
         </div>
         <div className="col-md-8">
+          <div className="character-name">
           {this.props.character.name}
+          </div>
           {Object.keys(this.props.character.attributes).map((key) => 
-            <div>{key}
+            <div className="attribute-font">{key}
               <ProgressBar now={this.props.character.attributes[key]} label={"%(now)s"}/>
             </div>
           )}
