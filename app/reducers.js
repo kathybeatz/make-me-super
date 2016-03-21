@@ -10,13 +10,12 @@ function modal(state = {
 }, action) {
   switch (action.type) {
     case OPEN_MODAL:
-      console.log('hello')
       return Object.assign({}, state, {
         modal: true
       })
     case CLOSE_MODAL:
       return Object.assign({}, state, {
-        modal: false
+        modal: false,
       })
     default:
       return state

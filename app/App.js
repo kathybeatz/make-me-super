@@ -23,7 +23,10 @@ export default class App extends Component {
   }
 
   closeModal() {
-    this.props.dispatch(closeModal())
+    const { dispatch, characterOne, characterTwo } = this.props
+    dispatch(closeModal())
+    dispatch(deselectSecondCharacter(characterOne))
+    dispatch(deselectCharacter(characterTwo))
   }
 
   handleClick(character) {
@@ -44,17 +47,24 @@ export default class App extends Component {
   render() {
     const { characters, characterOne, characterTwo, selection, modal } = this.props
     return (
+
       <div className="character-div">
-          <CharacterList characters={characters}
-                         handleClick={this.handleClick} />
-          { characterOne.selected ? <CharacterDetails character={characterOne} /> : <div></div> }
-          { characterTwo.selected ? <CharacterDetails character={characterTwo} /> : <div></div> }
-          { characterOne.selected && characterTwo.selected ? 
-            <Fight characterOne={characterOne} 
-                   characterTwo={characterTwo}
-                   openModal={this.openModal}
-                   closeModal={this.closeModal}
-                   modal={modal} /> : <div></div> }
+        <CharacterList characters={characters}
+                       handleClick={this.handleClick} />
+        <div className="row">
+          <div className="col-md-6">
+        { characterOne.selected ? <CharacterDetails character={characterOne} /> : <div></div> }
+          </div>
+          <div className="col-md-6">
+        { characterTwo.selected ? <CharacterDetails character={characterTwo} /> : <div></div> }
+          </div>
+        </div>
+        { characterOne.selected && characterTwo.selected ? 
+          <Fight characterOne={characterOne} 
+                 characterTwo={characterTwo}
+                 openModal={this.openModal}
+                 closeModal={this.closeModal}
+                 modal={modal} /> : <div></div> }
       </div>
     )
   }
@@ -71,7 +81,6 @@ function mapStateToProps(state) {
   const characterOne = state.characterDetails
   const characterTwo = state.characterTwoDetails
   const modal = state.modal
-  console.log(modal)
   return {
     characters,
     characterOne,

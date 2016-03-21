@@ -47,5 +47,18 @@ body {
   background-repeat: no-repeat;
   background-position: center 60%; /* offset, for image-specific focal point */
   height: 100vh;
+}
 
+.winner {
+  background-color: blue;
+  background-image: url(/Winner.png);
+}
+
+.winner-header {
+  text-align: center;
+  padding-bottom: 10px;
+}
+.winner-name {
+  font-weight: bold;
+  font-size: 24px;
 }
