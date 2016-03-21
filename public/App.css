@@ -16,9 +16,12 @@
 	width: 500px;
 }
 
-.character-img-size {
+.character-thumbnail {
 	width: 20%;
+}
 
+.character-thumbnail-clicked {
+	box-shadow: 0px 0px 5px #fff;
 }
 
 .attributes-div {
@@ -65,3 +68,5 @@ body {
   font-weight: bold;
   font-size: 24px;
 }
+
+.character-image

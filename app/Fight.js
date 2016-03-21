@@ -23,7 +23,7 @@ export default class Fight extends Component {
           <Modal.Title className="winner-header">Winner Winner Chicken Dinner</Modal.Title>
           <div className="row">
             <div className="col-md-6">
-              {winner ? <img src={winner.image} /> : <div></div>}
+              {winner ? <img className="img-responsive" src={winner.image} /> : <div></div>}
             </div>
             <div className="col-md-6">
               {winner ? <div className="winner-name">{winner.name}</div> : <div></div>}
@@ -43,4 +43,3 @@ export default class Fight extends Component {
     );
   }
 }
-
