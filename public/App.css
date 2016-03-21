@@ -23,6 +23,19 @@
 
 .character-thumbnail {
 	width: 20%;
+	-webkit-transition: all 0.5s ease; /* Safari and Chrome */
+  	-moz-transition: all 0.5s ease; /* Firefox */
+  	-o-transition: all 0.5s ease; /* IE 9 */
+  	-ms-transition: all 0.5s ease; /* Opera */
+  	transition: all 0.5s ease;
+}
+
+.character-thumbnail:hover {
+    -webkit-transform:scale(1.25); /* Safari and Chrome */
+    -moz-transform:scale(1.25); /* Firefox */
+    -ms-transform:scale(1.25); /* IE 9 */
+    -o-transform:scale(1.25); /* Opera */
+     transform:scale(1.25);
 }
 
 .character-thumbnail-clicked {
@@ -78,6 +91,12 @@ body {
 .title {
   font-weight: bold;
   font-size: 50px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 20px;
   color: #ffffff;
   text-align: center;
 }
