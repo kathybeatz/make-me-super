@@ -2,7 +2,6 @@ import React, { PropTypes, Component } from 'react'
 
 export default class CharacterDetails extends Component {
   render() {
-    console.log(this.props.character)
     return (
       <ul>
       	{this.props.character.name}

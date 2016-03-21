@@ -1,5 +1,5 @@
 {
-    "engines": {
+  "engines": {
     "node": "4.4.0"
   },
   "main": "server.js",
@@ -17,6 +17,7 @@
     "express": "^4.13.3",
     "http-proxy": "^1.13.2",
     "isomorphic-fetch": "^2.2.1",
+    "lodash": "^4.6.1",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
     "react-redux": "^4.4.1",

@@ -1,22 +1,23 @@
 import { combineReducers } from 'redux'
+import merge from 'lodash/merge'
 
 import { 
-  SELECT_CHARACTER, RECEIVE_CHARACTERS, DESELECT_CHARACTER
+  SELECT_CHARACTER, SELECT_SECOND, RECEIVE_CHARACTERS, DESELECT_CHARACTER
    } from './actions/index'
 
 
 function character(state = {
-  character: {},
+  selected: true
 }, action) {
   switch (action.type) {
     case SELECT_CHARACTER:
-      return Object.assign({}, state, {
-        character: action.character,
-      })
+      return merge({}, state, action.character)
+    case SELECT_SECOND:
+      return merge({}, state, action.character)
     case DESELECT_CHARACTER:
-      return Object.assign({}, state, {
-        character: {},
-      })
+      return merge({}, state, action.character, {
+        selected: false
+      } )
     default:
       return state
   }
@@ -32,12 +33,10 @@ function characterDetails(state = {}, action) {
   }
 }
 
-function selection(state = 0, action) {
+function characterTwoDetails(state = {}, action) {
   switch (action.type) {
-    case SELECT_CHARACTER:
-      return state + 1
-    case DESELECT_CHARACTER:
-      return state - 1
+    case SELECT_SECOND:
+      return character(state[action.character], action)
     default:
       return state
   }
@@ -56,7 +55,7 @@ function listCharacters(state = [], action) {
 const rootReducer = combineReducers({
 	characterDetails,
 	listCharacters,
-  selection
+  characterTwoDetails
 })
 
 export default rootReducer

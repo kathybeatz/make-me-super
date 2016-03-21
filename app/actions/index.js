@@ -2,12 +2,20 @@ import fetch from 'isomorphic-fetch'
 
 export const RECEIVE_CHARACTERS = 'RECEIVE_CHARACTERS'
 export const SELECT_CHARACTER = 'SELECT_CHARACTER'
+export const SELECT_SECOND = 'SELECT_SECOND'
 export const DESELECT_CHARACTER = 'DESELECT_CHARACTER'
 
 export function selectCharacter(character) {
   return {
   	type: SELECT_CHARACTER,
   	character
+  }
+}
+
+export function selectSecondCharacter(character) {
+  return {
+    type: SELECT_SECOND,
+    character
   }
 }
 
