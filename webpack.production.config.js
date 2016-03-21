@@ -24,7 +24,6 @@ var config = {
            $: "jquery",
            jQuery: "jquery"
        })
-  ]
   ],
   module: {
     loaders: [{
