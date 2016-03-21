@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { render } from 'react-dom'
-import  { fetchCharacters, selectCharacter, selectSecondCharacter, deselectCharacter } from './actions'
+import  { fetchCharacters, selectCharacter, selectSecondCharacter, deselectCharacter, deselectSecondCharacter } from './actions'
 import CharacterList from './CharacterList'
 import CharacterDetails from './CharacterDetails'
 
@@ -16,15 +16,18 @@ export default class App extends Component {
   }
 
   handleClick(character) {
-    // if (character.name === this.props.characterOne.name) {
-    //   this.props.dispatch(deselectCharacter(character))
-    // } else {
-      if (this.props.characterOne.selected) {
-        this.props.dispatch(selectSecondCharacter(character))
-      } else {
-        this.props.dispatch(selectCharacter(character))
-      }
-    //}
+    const { characterOne, characterTwo, dispatch } = this.props
+    if (characterOne.name === character.name) {
+      dispatch(deselectCharacter(character))
+    }
+    else if (characterOne.selected) {
+      dispatch(selectSecondCharacter(character))
+    } else {
+      dispatch(selectCharacter(character))
+    }
+    if (characterTwo.name === character.name) {
+      dispatch(deselectSecondCharacter(character))
+    } 
   }
 
   render(){
@@ -33,8 +36,8 @@ export default class App extends Component {
       <div>
         <CharacterList characters={characters}
                        handleClick={this.handleClick} />
-        { characterOne.name ? <CharacterDetails character={characterOne} /> : <div></div> }
-        { characterTwo.name ? <CharacterDetails character={characterTwo} /> : <div></div> }
+        { characterOne.selected ? <CharacterDetails character={characterOne} /> : <div></div> }
+        { characterTwo.selected ? <CharacterDetails character={characterTwo} /> : <div></div> }
       </div>
     )
   }
@@ -49,7 +52,6 @@ App.propTypes = {
 //false otherwise and have a limit of two character details listed
 
 function mapStateToProps(state) {
-  console.log(state)
   const characters = state.listCharacters
   const characterOne = state.characterDetails
   const characterTwo = state.characterTwoDetails

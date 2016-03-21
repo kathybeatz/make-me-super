@@ -4,6 +4,7 @@ export const RECEIVE_CHARACTERS = 'RECEIVE_CHARACTERS'
 export const SELECT_CHARACTER = 'SELECT_CHARACTER'
 export const SELECT_SECOND = 'SELECT_SECOND'
 export const DESELECT_CHARACTER = 'DESELECT_CHARACTER'
+export const DESELECT_SECOND = 'DESELECT_SECOND'
 
 export function selectCharacter(character) {
   return {
@@ -22,6 +23,13 @@ export function selectSecondCharacter(character) {
 export function deselectCharacter(character) {
   return {
     type: DESELECT_CHARACTER,
+    character
+  }
+}
+
+export function deselectSecondCharacter(character) {
+  return {
+    type: DESELECT_SECOND,
     character
   }
 }

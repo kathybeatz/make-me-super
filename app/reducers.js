@@ -2,41 +2,38 @@ import { combineReducers } from 'redux'
 import merge from 'lodash/merge'
 
 import { 
-  SELECT_CHARACTER, SELECT_SECOND, RECEIVE_CHARACTERS, DESELECT_CHARACTER
+  SELECT_CHARACTER, SELECT_SECOND, RECEIVE_CHARACTERS, DESELECT_CHARACTER, DESELECT_SECOND
    } from './actions/index'
 
-
-function character(state = {
-  selected: true
+function characterDetails(state = {
+  selected: false
 }, action) {
   switch (action.type) {
     case SELECT_CHARACTER:
-      return merge({}, state, action.character)
-    case SELECT_SECOND:
-      return merge({}, state, action.character)
-    case DESELECT_CHARACTER:
       return merge({}, state, action.character, {
-        selected: false
-      } )
-    default:
-      return state
-  }
-}
-
-function characterDetails(state = {}, action) {
-  switch (action.type) {
-    case SELECT_CHARACTER:
+        selected: true
+      })
     case DESELECT_CHARACTER:
-      return character(state[action.character], action)
+      return merge({}, {
+        selected: false
+      })
     default:
       return state
   }
 }
 
-function characterTwoDetails(state = {}, action) {
+function characterTwoDetails(state = {
+  selected: false
+}, action) {
   switch (action.type) {
     case SELECT_SECOND:
-      return character(state[action.character], action)
+      return merge({}, state, action.character, {
+        selected: true
+      })
+    case DESELECT_SECOND:
+      return merge({}, {
+        selected: false
+      })
     default:
       return state
   }
