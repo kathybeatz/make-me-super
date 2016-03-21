@@ -50,6 +50,7 @@ export default class App extends Component {
     return (
       <div>
         <div className="title">Telegraph Academy Fight Club</div>
+        <div className="subtitle">1st RULE: You do not talk about HIRIING ASSESSMENT</div>
         <div className="character-div">
           <CharacterList characters={characters}
                          handleClick={this.handleClick} />
