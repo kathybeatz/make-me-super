@@ -4,6 +4,8 @@ import bootstrap from 'bootstrap'
 
 export default class Fight extends Component {
   render() {
+    let random = Math.round(Math.random() * (1))
+    console.log(random)
     const { characterOne, characterTwo, openModal, closeModal, modal} = this.props
       return (
       <div>
@@ -16,10 +18,10 @@ export default class Fight extends Component {
         </Button>
         <Modal show={modal.modal}
           closeTimeoutMS={150}>
-          <Modal.Header closeButton>
+          <Modal.Header>
             <Modal.Title>Winner Winner Chicken Dinner</Modal.Title>
           </Modal.Header>
-          <Modal.Body>Text</Modal.Body>
+          <Modal.Body>{random ? characterOne.name: characterTwo.name}</Modal.Body>
           <Modal.Footer>
             <Button onClick={closeModal}>Close</Button>
           </Modal.Footer>
