@@ -35,6 +35,10 @@ function characterDetails(state = {
       return merge({}, {
         selected: false
       })
+    case OPEN_MODAL:
+      return merge({}, {
+        selected: false
+      })
     default:
       return state
   }
@@ -49,6 +53,10 @@ function characterTwoDetails(state = {
         selected: true
       })
     case DESELECT_SECOND:
+      return merge({}, {
+        selected: false
+      })
+    case OPEN_MODAL:
       return merge({}, {
         selected: false
       })

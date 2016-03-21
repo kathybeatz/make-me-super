@@ -5,7 +5,6 @@ import bootstrap from 'bootstrap'
 export default class Fight extends Component {
   render() {
     let random = Math.round(Math.random() * (1))
-    console.log(random)
     const { characterOne, characterTwo, openModal, closeModal, modal} = this.props
       return (
       <div>
