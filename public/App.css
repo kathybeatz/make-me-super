@@ -1,8 +1,26 @@
-.character-name {
-  font-weight: bold;
-  font-size: 30px;
-  color: #ffffff;
+/********************************
+      Global Elements
+*********************************/
+
+body {
+  background-image: url('character-background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center 60%; /* offset, for image-specific focal point */
+  height: 100vh;
 }
+
+/* remove default <ul> list styles */
+.unstyled-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+
+/********************************
+      Character Grid
+*********************************/
 
 .character-div {
 	width: 60%;
@@ -13,6 +31,7 @@
   	margin: 0 auto;
   	background-color: rgba(0, 0, 0, .3);
   	border-radius: 10px;
+  	top: 18%;
   	position: relative;
 
 }
@@ -21,42 +40,18 @@
 	width: 500px;
 }
 
-.character-thumbnail {
-	width: 20%;
-	-webkit-transition: all 0.5s ease; /* Safari and Chrome */
-  	-moz-transition: all 0.5s ease; /* Firefox */
-  	-o-transition: all 0.5s ease; /* IE 9 */
-  	-ms-transition: all 0.5s ease; /* Opera */
-  	transition: all 0.5s ease;
-}
-
-.character-thumbnail:hover {
-    -webkit-transform:scale(1.25); /* Safari and Chrome */
-    -moz-transform:scale(1.25); /* Firefox */
-    -ms-transform:scale(1.25); /* IE 9 */
-    -o-transform:scale(1.25); /* Opera */
-     transform:scale(1.25);
-}
-
-.character-thumbnail-clicked {
-	box-shadow: 0px 0px 5px #fff;
-}
-
 .character-img-size {
-	width: 140px;
-
+	width: 20%;
 }
 
-.select-character {
-  font-weight: bold;
-  font-size: 25px;
-  color: #ffffff;
-}
+
+/********************************
+      Character Attributes
+*********************************/
 
 .attributes-div {
 	height: 274px;
 	display: inline-block;
-	color: #ffffff;
 }
 
 .attributes-box {
@@ -66,40 +61,21 @@
 	text-align: center;
 	padding: 20px;
   	margin: 0 auto;
-  	background-color: #ffffff;
+  	background-color: rgba(0, 0, 0, .3);
   	border-radius: 10px;
   	position: relative;
   	color: #ffffff;
+
 }
 
 .attributes-pic {
 	width: 100px;
 }
 
-.attribute-font {
-	color: #ffffff;
-}
 
-body {
-  background-image: url('character-background.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center 60%; /* offset, for image-specific focal point */
-  height: 100vh;
-}
-
-.title {
-  font-weight: bold;
-  font-size: 50px;
-  color: #ffffff;
-  text-align: center;
-}
-
-.subtitle {
-  font-size: 20px;
-  color: #ffffff;
-  text-align: center;
-}
+/********************************
+         Winner Page
+*********************************/
 
 .winner {
   background-color: blue;
@@ -115,4 +91,21 @@ body {
   font-size: 24px;
 }
 
-.character-image
+
+/********************************
+         Upgrade Page
+*********************************/
+
+.activity-list li {
+  margin-top: 16px;
+}
+
+.activity-image {
+  height: 200px;
+  margin-bottom: 8px;
+  background-color: rgba(0,0,255,0.5);
+}
+
+.upgrade .attributes {
+  max-height: 200px;
+}
