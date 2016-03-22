@@ -94,6 +94,12 @@ body {
   color: #ffffff;
 }
 
+.select-character {
+  font-weight: bold;
+  font-size: 25px;
+  color: #ffffff;
+}
+
 /********************************
       Character Attributes
 *********************************/
@@ -101,19 +107,6 @@ body {
 .attributes-div {
   height: 274px;
   display: inline-block;
-  color: #ffffff;
-}
-
-.attributes-box {
-  text-align: right;
-  width: 500px;
-  height: 400px;
-  text-align: center;
-  padding: 20px;
-  margin: 0 auto;
-  background-color: #ffffff;
-  border-radius: 10px;
-  position: relative;
   color: #ffffff;
 }
 
@@ -129,11 +122,21 @@ body {
   width: 100px;
 }
 
+/********************************
+         Title
+*********************************/
+
 .title {
   font-size: 90px;
   color: #ffffff;
   text-align: center;
   font-family: FightClub;
+}
+
+.subtitle {
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
 }
 
 /********************************
