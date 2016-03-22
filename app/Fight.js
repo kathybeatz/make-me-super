@@ -11,9 +11,8 @@ export default class Fight extends Component {
       return (
       <div>
         <Button
-          bsStyle="danger"
+          bsStyle="primary"
           bsSize="large"
-          block
           onClick={openModal}>
           Fight!
         </Button>
