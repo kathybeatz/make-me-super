@@ -13,8 +13,7 @@ export default class Fight extends Component {
         <Button
           bsStyle="primary"
           bsSize="large"
-          onClick={openModal}
-        >
+          onClick={openModal}>
           Fight!
         </Button>
         <Modal show={modal.modal}

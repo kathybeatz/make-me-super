@@ -48,19 +48,27 @@ export default class App extends Component {
   render() {
     const { characters, characterOne, characterTwo, selection, modal } = this.props
     return (
-
-      <div className="character-div">
-        <CharacterList characters={characters}
-                       handleClick={this.handleClick} />
-        <div className="row"> 
-          <div className="col-sm-6">
-            { characterOne.selected ? <CharacterDetails character={characterOne} /> : <div></div> }
-          </div>
-          <div className="col-sm-6">
-            { characterTwo.selected ? <CharacterDetails character={characterTwo} /> : <div></div> }
-          </div>
-        </div>
-
+      <div>
+        <div className="title">Telegraph Academy Fight Club</div>
+        <div className="subtitle">1st RULE of Fight Club: Do not talk about HIRING ASSESSMENT</div>
+        <div className="character-div">
+          <CharacterList characters={characters}
+                         handleClick={this.handleClick}
+                         characterOne={characterOne}
+                         characterTwo={characterTwo} />
+          <div className="select-character">Select a Character</div>
+            <div className="row">
+              <div className="col-sm-6">
+                <div className="attribute-box">
+                  { characterOne.selected ? <CharacterDetails character={characterOne} /> : <div></div> }
+                </div>         
+              </div>
+              <div className="col-sm-6">
+                <div className="attribute-box">
+                  { characterTwo.selected ? <CharacterDetails character={characterTwo} /> : <div></div> }
+                </div>
+              </div>
+            </div>
         {  (characterOne.selected && !characterTwo.selected )
         || (characterTwo.selected && !characterOne.selected )  ? 
           <Upgrade character={ characterOne.selected ? characterOne : characterTwo }
@@ -68,6 +76,7 @@ export default class App extends Component {
         { characterOne.selected && characterTwo.selected ? 
           <Fight characterOne={characterOne} characterTwo={characterTwo}
                  openModal={this.openModal} closeModal={this.closeModal} modal={modal} /> : <div></div> }
+      </div>
       </div>
     )
   }
@@ -93,3 +102,4 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps)(App)
+  

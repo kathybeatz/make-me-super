@@ -23,53 +23,86 @@ body {
 *********************************/
 
 .character-div {
-	width: 60%;
-	height: 310px;
-	text-align: center;
-	margin-top: 5vh;
-	padding: 20px;
-  	margin: 0 auto;
-  	background-color: rgba(0, 0, 0, .3);
-  	border-radius: 10px;
-  	top: 18%;
-  	position: relative;
+  width: 60%;
+  height: 310px;
+  text-align: center;
+  margin-top: 5vh;
+  padding: 20px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, .3);
+    border-radius: 10px;
+    top: 18%;
+    position: relative;
 
 }
 
 .character-space {
-	width: 500px;
+  width: 500px;
 }
 
 .character-img-size {
-	width: 20%;
+  width: 20%;
 }
 
+.character-thumbnail {
+  width: 20%;
+  -webkit-transition: all 0.5s ease; /* Safari and Chrome */
+  -moz-transition: all 0.5s ease; /* Firefox */
+  -o-transition: all 0.5s ease; /* IE 9 */
+  -ms-transition: all 0.5s ease; /* Opera */
+  transition: all 0.5s ease;
+  box-shadow: 0px 0px 20px #fff;
+}
+.character-thumbnail:hover {
+  box-shadow: 0px 0px 0px;
+  -webkit-transform:scale(1.15); /* Safari and Chrome */
+  -moz-transform:scale(1.15); /* Firefox */
+  -ms-transform:scale(1.15); /* IE 9 */
+  -o-transform:scale(1.15); /* Opera */
+  transform:scale(1.15);
+}
+
+.character-img-size {
+  width: 140px;
+
+}
+
+.character-name {
+  font-weight: bold;
+  font-size: 30px;
+  color: #ffffff;
+}
 
 /********************************
       Character Attributes
 *********************************/
 
 .attributes-div {
-	height: 274px;
-	display: inline-block;
+  height: 274px;
+  display: inline-block;
+  color: #ffffff;
 }
 
 .attributes-box {
-	text-align: right;
-	width: 500px;
-	height: 400px;
-	text-align: center;
-	padding: 20px;
-  	margin: 0 auto;
-  	background-color: rgba(0, 0, 0, .3);
-  	border-radius: 10px;
-  	position: relative;
-  	color: #ffffff;
+  text-align: right;
+  width: 500px;
+  height: 400px;
+  text-align: center;
+  padding: 20px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    position: relative;
+    color: #ffffff;
 
 }
 
+.attribute-font {
+  color: #ffffff;
+}
+
 .attributes-pic {
-	width: 100px;
+  width: 100px;
 }
 
 
