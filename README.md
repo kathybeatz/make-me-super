@@ -1,5 +1,5 @@
 ![alt tag](http://g.recordit.co/1n6Go1V6Kx.gif)
-# Job Hunt
+# Frenemy Fight Club
 
 > Pithy project description
 
