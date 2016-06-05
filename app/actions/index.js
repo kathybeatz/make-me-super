@@ -1,4 +1,4 @@
-import fetch from 'isomorphic-fetch'
+import fetch from 'isomorphic-fetch' //promise/ajax calls
 
 export const RECEIVE_CHARACTERS = 'RECEIVE_CHARACTERS'
 export const SELECT_CHARACTER = 'SELECT_CHARACTER'

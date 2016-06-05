@@ -7,7 +7,7 @@ import Activity from './Activity'
 
 export default class Upgrade extends Component {
   render() {
-    const { character, openModal, closeModal, modal} = this.props
+    const { character, openModal, closeModal, modal } = this.props
     const activities=[
       {title: "hang-gliding"},
       {title: "underwater boxing"},
