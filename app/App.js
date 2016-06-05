@@ -52,10 +52,10 @@ export default class App extends Component {
         <div className="title">Frenemy Fight Club</div>
         <div className="subtitle">1st RULE of Frenemy Fight Club: Keep your friends close and your enemies closer</div>
         <div className="rules">
-          <span>To Play:</span>
-            <span>1. Click a character to Select it</span>
-            <span>2. To Upgrade, click 'Upgrade' at the bottom after Selecting</span>
-            <span>3. To Deselect, click the same character again</span>
+          <span>To Play:</span><br></br>
+            <span>1. Click a character to Select it</span><br></br>
+            <span>2. To Upgrade, click 'Upgrade' at the bottom after Selecting</span><br></br>
+            <span>3. To Deselect, click the same character again</span><br></br>
             <span>4. To Fight, click two characters and click 'Fight' at the bottom</span>
         </div>
         <div className="character-div">
